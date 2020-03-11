@@ -18,6 +18,47 @@ body {
     /* overflow: hidden; */
     height: 100%;
 }
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+    .container {
+        width: fit-content;
+        height: 400px;
+    }
+    p h1 h2 h3 {
+        font-size: 14px;
+         width: fit-content;
+        
+    }
+#navbar h2{
+    margin-left: 1px;
+
+
+}
+
+}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
 
 
 /*utility classes*/
@@ -56,13 +97,12 @@ hr{
     justify-content: space-between;
     background: #333;
     color: #fff;
-    padding: 1.5rem 8rem;
+    padding: 1.5rem 1.1rem;
     position: sticky;
     top: 0;
     z-index: 1;
     border-bottom: 3px soild #3693ff;
 }
-
 #navbar ul {
     display: flex;
     align-items: center;
@@ -72,15 +112,17 @@ hr{
 #navbar h2 a {
     color: #fff;
     text-decoration: none;
+    /* padding-right: 200px; */
+
 }
 
 #navbar li a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding: 1rem;
     margin: 0 0.5rem;
-    border-radius: 5px;
+    border-radius: 15px;
     transition: 0.3s;
 }
 
@@ -112,7 +154,7 @@ hr{
 
 .showcase-content h1 {
     font-size: 4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .showcase-content .btn {
@@ -133,7 +175,7 @@ hr{
     text-decoration: none;
     display: inline-block;
     padding: 1rem 2rem;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 1px solid #3693ff;
     font-weight: bold;
     
@@ -148,32 +190,37 @@ hr{
 /*about*/
 
 #about {
+
     width: 100%;
-    padding: 5rem 0;
-    height: 600px;
+    padding: 4rem 0;
+    height: 800px;
+    background-color: #d1d1d1;
 }
 
 #about h2, #service{
     text-align: center;
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 5rem;
+    margin-bottom: 2rem;
 }
 #about h3,
 #service {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
 }
 #about p{
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 #about p .lead{
-margin-bottom: 1rem;
+margin-bottom: 1.5rem;
+
 
 }
 #about .about-content {
     /* display: flex; */
     position: relative;
     width: 100%;
+
     
 } 
 /* #about .about-text, #about .about-image{ */
@@ -185,7 +232,7 @@ margin-bottom: 1rem;
     /* flex-wrap: wrap; */
     text-align: justify;
     position: relative;
-    margin: 20px;
+    margin: 2px;
     /* width:inherit; */
     
 }
@@ -204,14 +251,14 @@ margin-bottom: 1rem;
 
 }
 #about .about-image{
-    width: 200px;
+    width: 400px;
     position: relative;
     overflow: hidden;
-    height: 200px;
+    height: 400px;
     float: right;
     border-radius: 50%;
     shape-outside: circle();
-    margin: 20px;
+    margin: 5px 5px;
 }
 
 
@@ -245,27 +292,31 @@ margin-bottom: 1rem;
 /*service*/
 
 #service {
+    margin-top: 0px;
+    margin-bottom: 0px;
     height: 600px;
     padding: 5rem 0;
+    background-color: #99c4f5;
 }
 
 #service .h3 {
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 #service .boxes {
     display: flex;
+     background-color: #99c4f5;
 }
 
 #service .box {
-    background: #fff;
+    background: #99c4f5;
     flex: 1;
     padding: 3rem;
     margin: 0 3rem;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px #d1d1d1;
+    border-radius: 20px;
+    box-shadow: 20px 20px 20px #2712e9;
     font-size: 1.3rem;
 }
 
@@ -280,9 +331,13 @@ margin-bottom: 1rem;
 }
 #service .box .feature-left{
    width: 50%;
+  padding-left: 2rem;
+
    height: 100%;
    display: inline-block;
    text-align: center;
+   text-align: left;
+   justify-content: left;
 }
 
 #service .box .feature-right {
@@ -291,8 +346,8 @@ margin-bottom: 1rem;
     /* float: right; */
     display: inline-flexbox;
     float: left;
-    text-align: center;
-    justify-content: right;
+    text-align: left;
+    justify-content: left;
 }
 
 
@@ -303,6 +358,7 @@ margin-bottom: 1rem;
     background: url('bg.jpg') no-repeat repeat center/cover;
     height: 850px;
     position: relative;
+    margin-top: 0px;
 }
 
 #testmonials-bg {
@@ -358,6 +414,7 @@ margin-bottom: 1rem;
 #content {
     padding: 5rem 0;
     height: 800px;
+    background-color: #dbd4d4e0;
 }
 
 #content h2 {
@@ -377,8 +434,9 @@ margin-bottom: 1rem;
     background: #fff;
     padding: 3rem;
     box-shadow: 2px 2px 5px #d1d1d1;
-    border-radius: 10px;
+    border-radius: 15px;
     height: inherit;
+    background-color: #c8cbcf;
 }
 
 #content .form-group {
