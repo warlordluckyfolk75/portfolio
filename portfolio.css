@@ -18,47 +18,7 @@ body {
     /* overflow: hidden; */
     height: 100%;
 }
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
-
-
-/* Larger than mobile */
-@media (min-width: 400px) {
-    .container {
-        width: fit-content;
-        height: 400px;
-    }
-    p h1 h2 h3 {
-        font-size: 14px;
-         width: fit-content;
-        
-    }
-#navbar h2{
-    margin-left: 1px;
-
-
-}
-
-}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}
-
+/
 
 
 /*utility classes*/
@@ -92,44 +52,121 @@ hr{
 }
 /*navbar*/
 
-#navbar {
-    display: flex;
-    justify-content: space-between;
+nav {
     background: #333;
-    color: #fff;
-    padding: 1.5rem 1.1rem;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    border-bottom: 3px soild #3693ff;
-}
-#navbar ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
+    height: 66px;
+    width: 100%;
 }
 
-#navbar h2 a {
+label.logo {
     color: #fff;
+    font-size: 25px;
+    line-height: 66px;
+    padding: 0 25px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    line-height: 66px;
+    margin: 0 5px;
+}
+
+nav ul li a {
     text-decoration: none;
-    /* padding-right: 200px; */
-
-}
-
-#navbar li a {
-    text-decoration: none;
     color: #fff;
-    font-size: 1.5rem;
-    padding: 1rem;
-    margin: 0 0.5rem;
-    border-radius: 15px;
-    transition: 0.3s;
+    font-size: 1rem;
+    padding: 7px 13px;
+    border-radius: 4px;
+    text-transform: uppercase;
 }
 
-#navbar li a:hover {
-    background-color: #3693ff;
+nav ul li a:hover,
+a .active:hover {
+    background: #3693ff;
+    transition: 0.5s;
 }
 
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 66px;
+    margin-right: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+
+}
+
+@media(max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 852px) {
+    .checkbtn {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background: #333;
+        top: 66px;
+        left: -100%;
+        transition: all 0.5s;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    nav ul li a,
+    a:hover {
+        background: none;
+        color: #3693ff;
+        transition: 0.5s;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+}
+
+@media(max-width: 400px) {
+    label.logo {
+        font-size: 25px;
+        padding-left: 15px;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+}
 /*showcase*/
 
 #showcase {
